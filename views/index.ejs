@@ -1,27 +1,30 @@
 <%- include('partials/header.ejs') %>
 
-    <main>
-        <div class="postingan-grid">
-            <div class="postingan">
-                <div class="postingan-content">
-                    <h2>Ambatron</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget metus lobortis, egestas ipsum et, tempor erat. Fusce rutrum nisl sed sodales ultricies. Nulla nisl nibh, auctor in nisi pellentesque, elementum faucibus est. Aenean efficitur nunc ac pellentesque vehicula. Suspendisse non fringilla ante, vitae gravida orci. Aliquam dolor sem, aliquam id mauris eu, feugiat tincidunt turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque eu pulvinar neque. Quisque non lacinia ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut sagittis justo, sed posuere erat. Proin luctus ipsum vel magna venenatis, at varius erat vestibulum. Aenean vulputate magna magna, vel commodo purus commodo quis.
-                    </p>
+<main>
+    <div class="postingan-grid">
+        <% if (posts && posts.length > 0) { %>
+            <% posts.forEach((post, index) => { %>
+                <div class="postingan">
+                    <div class="postingan-content">
+                        <h2><%= post.title %></h2>
+                        <p><%= post.Description %></p>
+                    </div>
+                    <div class="postingan-button">
+                        <button type="button" class="postingan-button-view">View More</button>
+                        <button type="button" class="postingan-button-edit">Edit</button>
+                        <!-- Tombol Delete -->
+                        <form action="/articels/<%= index %>/delete" method="POST">
+                            <button type="submit" class="postingan-button-delete">Delete</button>
+                        </form>
+                    </div>
                 </div>
-                <div>
-
-                </div>
-                <div class="postingan-button">
-                    <button type="button" class="postingan-button-view">View More</button>
-                    <button type="button" class="postingan-button-edit"> <p>Edit</p></button>
-                    <button type="button" class="postingan-button-delete"><p>Delete</p></button>
-                </div>
-
-            </div>
-
-        </div>
+            <% }) %>
+        <% } else { %>
+            <p>No posts available</p>
+        <% } %>
+    </div>
+</main>
 
 
-    </main>
 
 <%- include('partials/footer.ejs') %>
