@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Membuat container setinggi viewport */
+}
+
+main {
+    flex: 1; /* Membuat elemen utama fleksibel untuk mengisi ruang */
+}
+
+
+
+
+header{
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    background-color: #262626;
+
+}
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+}
+.nav-menu{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+
+}
+
+.nav-item{
+    margin: 10px;
+    padding: 7px;
+
+}
+.nav-home{
+    border: 2px solid rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    border-radius: 15%;
+    color: white;
+    transition: 0.5s ease-in-out;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: 0.3s ease-in-out;
+}
+
+.nav-home:hover{
+    border: 2px solid blue;
+}
+
+.nav-link:hover{
+    color: blue;
+}
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+@media(max-width:768px){
+    nav{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .hamburger{
+        display: block;
+        margin-right: 20px;
+        margin-left: 100px;
+    }
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+
+    }
+
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+
+    }
+
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+
+    }
+
+    .nav-menu{
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #262626;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .nav-item{
+        margin: 16px 0;
+    }
+
+    .nav-menu.active{
+        left: 0;
+    }
+}
+
+/* Artiles styles */
+.articel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 700px;
+}
+.articel-post{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    border: 2px solid black;
+    padding: 20px;
+
+}
+
+.articel-post h1{
+    margin-bottom: 20px;
+    text-align: center;
+}
+.articel-post form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.articel-post-button{
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 10px;
+    width: 100%;
+}
+.articel-post-button .button-cancel{
+    background-color: red;
+}
+
+.articel-post-button button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 102, 255);
+    color: white;
+    border-radius: 10px;
+    width: 80%;
+    height: 30px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+/* post container */
+.postingan-grid {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.postingan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 500px;
+    width: 100%;
+
+    padding: 10px;
+}
+
+/* post content */
+.postingan-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid black;
+    padding: 10px;
+    gap: 10px;
+    margin: 0;
+}
+
+/* post button container */
+.postingan-button {
+    display: flex;
+    border: 2px solid black;
+    border-top: none;
+    padding: 10px;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.postingan-button button{
+    border-radius: 10px;
+    padding: 5px;
+    border: 2px solid balck;
+    background-color: rgb(0, 102, 255);
+    color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.postingan-button .postingan-button-delete{
+    background-color: red;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #262626;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Pilihan tambahan jika ada konten lebih spesifik */
+.footer-main {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Jika ingin footer berada di bagian tengah */
+}
