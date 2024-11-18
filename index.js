@@ -25,7 +25,7 @@ app.post("/articels", (req, res) => {
     const { title, Description } = req.body;
 
     if (!title || !Description) {
-        res.status(400).send("Title and Description are required");
+        res.status(400).send("Title and Description are required!");
         return;
     }
 
