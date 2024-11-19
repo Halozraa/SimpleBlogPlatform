@@ -4,6 +4,30 @@
             </div>
         </footer>
     </div>
+    <script>
+        // Menangani tombol View More
+        const viewButtons = document.querySelectorAll('.postingan-button-view');
+        viewButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const postElement = event.target.closest('.postingan');  // Cari elemen postingan terdekat
+                const title = postElement.querySelector('h2').innerText;
+                const description = postElement.querySelector('p').innerText;
+
+                // Tampilkan lebih banyak informasi, bisa menggunakan alert, modal, atau lainnya
+                alert(`Title: ${title}\nDescription: ${description}`);
+            });
+        });
+
+        // Menangani tombol Edit (misalnya mengarahkan ke halaman edit)
+        const editButtons = document.querySelectorAll('.postingan-button-edit');
+        editButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const index = event.target.closest('.postingan').getAttribute('data-index');
+                // Mengarahkan ke halaman edit dengan parameter index
+                window.location.href = `/articels/${index}/edit`;  // Ganti dengan rute edit yang sesuai
+            });
+        });
+    </script>
 
 </body>
 </html>
