@@ -1,1 +1,90 @@
-node_modules
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Environment variables
+.env
+
+# Build and output directories
+dist/
+build/
+out/
+temp/
+
+# Cache files
+.cache/
+.next/
+.sass-cache/
+.vscode/
+.DS_Store
+*.swp
+*.tmp
+*.pid
+
+# OS-specific files
+Thumbs.db
+ehthumbs.db
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# IDE/Editor files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+
+# Git-specific files
+.git/
+.gitignore
+
+# Testing
+coverage/
+*.lcov
+.nyc_output/
+
+# Miscellaneous
+*.lock
+*.bak
+*.orig
+
+# Images and graphics (optional, if auto-generated or temporary)
+screenshots/
+*.psd
+*.ai
+
+# Specific frameworks/tools
+# React
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# Angular
+.angular/
+
+# Laravel
+/public/storage
+/storage/*.key
+
+# Svelte
+.svelte-kit/
+
+# Generated files
+*.map
+*.d.ts
+*.min.js
+*.min.css
+
+# Ignore public assets if dynamically generated
+public/assets/
+
+# Ignore any temporary user-uploaded files
+uploads/temp/
