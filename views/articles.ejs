@@ -1,0 +1,23 @@
+<%- include('partials/header.ejs') %>
+
+    <main>
+        <div class="articel">
+            <div class="articles-style">
+                <div class="articel-post">
+                    <form action="/articles" method="post">
+                        <h1>Article</h1>
+                        <label for=""><strong>Title</strong></label>
+                        <input type="text" name="title" placeholder=" input your title ">
+                        <label for=""><strong>Description</strong></label>
+                        <textarea name="Description" id="Description" placeholder=" input here.." rows="10" cols="500"></textarea>
+                        <div class="articel-post-button">
+                            <button type="button" class="button-cancel"><a href="/">Cancel</a></button>
+                            <button type="submit"><>Post</></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<%- include('partials/footer.ejs') %>

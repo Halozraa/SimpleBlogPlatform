@@ -20,12 +20,12 @@ app.get("/", (req, res) => {
 });
 
 // Halaman Artikel
-app.get("/articels", (req, res) => {
-    res.render("articels", { posts });
+app.get("/articles", (req, res) => {
+    res.render("articles", { posts });
 });
 
 // Handle Post Request
-app.post("/articels", (req, res) => {
+app.post("/articles", (req, res) => {
     const { title, Description } = req.body;
 
     if (!title || !Description) {
@@ -39,9 +39,18 @@ app.post("/articels", (req, res) => {
         Description: Description,
     };
     posts.push(post);
-    res.redirect("/articels");
+    res.redirect("/articles");
 });
 
+app.get("/articles/:id/edit", (req, res) => {
+    const { id } = req.params;
+    const foundPost = posts.find(post => post.id === id);
+    if (foundPost) {
+        res.render("articles-edit", { post: foundPost });
+    } else {
+        res.status(404).send("Artikel tidak ditemukan");
+    }
+});
 
 app.put("/articles/:id/edit", (req, res) => {
     const { id } = req.params;
@@ -51,7 +60,7 @@ app.put("/articles/:id/edit", (req, res) => {
     if (foundPost) {
         foundPost.title = title || foundPost.title;
         foundPost.description = description || foundPost.description;
-        res.redirect(`/articles/${id}`);
+        res.redirect(`/`);
     } else {
         res.status(404).send("Artikel tidak ditemukan");
     }
@@ -59,14 +68,14 @@ app.put("/articles/:id/edit", (req, res) => {
 
 
 // Handle DELETE Request untuk menghapus artikel
-app.delete("/articels/:id", (req, res) => {
+app.delete("/articles/:id", (req, res) => {
     const { id } = req.params;
     const index =posts.findIndex(post=>post.id===id)
     if(index!== -1){
         posts.splice(index,1)
         res.redirect("/")
     }else{
-        res.status(404).send("articels tidak ditemukan")
+        res.status(404).send("articles tidak ditemukan")
     }
 });
 
