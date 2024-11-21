@@ -13,7 +13,7 @@
                         <button type="button" class="postingan-button-view">View More</button>
                         <button type="button" class="postingan-button-edit">Edit</button>
                         <!-- Tombol Delete -->
-                        <form action="/articels/<%= index %>/delete" method="POST">
+                        <form action="/articels/<%= post.id %>?_method=DELETE" method="post">
                             <button type="submit" class="postingan-button-delete">Delete</button>
                         </form>
                     </div>
