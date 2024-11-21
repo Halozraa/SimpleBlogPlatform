@@ -26,23 +26,23 @@ app.get("/articles", (req, res) => {
 
 // Handle Post Request
 app.post("/articles", (req, res) => {
-    const { title, Description } = req.body;
+    const { title, description } = req.body;
 
-    if (!title || !Description) {
-        res.status(400).send("Title and Description are required!");
+    if (!title || !description) {
+        res.status(400).send("Title and description are required!");
         return;
     }
 
     const post = {
         id : uuidv4(),
         title: title,
-        Description: Description,
+        description: description,
     };
     posts.push(post);
-    res.redirect("/articles");
+    res.redirect("/");
 });
 
-app.get("/articles/:id/edit", (req, res) => {
+app.get("/articles/:id", (req, res) => {
     const { id } = req.params;
     const foundPost = posts.find(post => post.id === id);
     if (foundPost) {
@@ -52,7 +52,7 @@ app.get("/articles/:id/edit", (req, res) => {
     }
 });
 
-app.put("/articles/:id/edit", (req, res) => {
+app.put("/articles/:id", (req, res) => {
     const { id } = req.params;
     const { title, description } = req.body;
 

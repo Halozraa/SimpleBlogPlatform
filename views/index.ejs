@@ -7,12 +7,11 @@
                 <div class="postingan">
                     <div class="postingan-content">
                         <h2><%= post.title %></h2>
-                        <p><%= post.Description %></p>
+                        <p><%= post.description %></p>
                     </div>
                     <div class="postingan-button">
-                        <button type="button" class="postingan-button-view">View More</button>
                         <button type="button" class="postingan-button-edit
-                        "><a href="/articles/<%= post.id %>/edit">Edit</a></button>
+                        "><a href="/articles/<%= post.id %>?_method=PUT">Edit</a></button>
                         <!-- Tombol Delete -->
                         <form action="/articles/<%= post.id %>?_method=DELETE" method="post">
                             <button type="submit" class="postingan-button-delete">Delete</button>
